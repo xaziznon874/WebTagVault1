@@ -1,0 +1,16 @@
+{
+  "tags": [
+    {
+      "id": "f5ee",
+      "tagName": " !DOCTYPE html",
+      "description": "Htmlni asosiy elementlaridan biri bo`lib HTML5 formatida yozilganligini bildirib turadi. DOCTYPE brauzerlarga hujjatni to`g`ri qabul qilishlariga yordam beradi. DOCTYPE yordamida brauzerlar websahifadagi css va js kodlarini qanday ishlatishni bilishadi. DOCTYPE web sahifalarni to`g`ri ko`rsatilishini taminlaydi.",
+      "code": "<!DOCTYPE html>\n<html lang=\"uz\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Mening sahifam</title>\n</head>\n<body>\n    <h1>Salom Dunyo!</h1>\n    <p>O‘zbekcha matn, Русский текст, 中文文本, 😊👍</p>\n</body>\n</html>"
+    },
+    {
+      "id": "69e2",
+      "tagName": "<!-- -->",
+      "description": "Izoh yozishda qullaniladi.Masalan kodizni nima ish bajarishini yozish mumkin.Bu teg ichidagi kodlar natijasi va textlar brauzerda ko`rsatilmaydi.",
+      "code": "<!DOCTYPE html>\n<html lang=\"uz\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Mening sahifam</title>\n</head>\n<body>\n   <!--  <h1>Salom Dunyo!</h1>-->\n\n</body>\n</html>"
+    }
+  ]
+}
