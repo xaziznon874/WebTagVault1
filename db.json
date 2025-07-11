@@ -11,6 +11,18 @@
       "tagName": "<!-- -->",
       "description": "Izoh yozishda qullaniladi.Masalan kodizni nima ish bajarishini yozish mumkin.Bu teg ichidagi kodlar natijasi va textlar brauzerda ko`rsatilmaydi.",
       "code": "<!DOCTYPE html>\n<html lang=\"uz\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Mening sahifam</title>\n</head>\n<body>\n   <!--  <h1>Salom Dunyo!</h1>-->\n\n</body>\n</html>"
+    },
+    {
+      "id": "dc3c",
+      "tagName": "html",
+      "description": "html tegi barcha HTML Hujjatini asosiy kontaineri.Bu teg ochiluvchi va yopiluvchi teg hisoblanadi va barcha kodlar shu teg ichida buladi. \nStandart css sozlamalari: \nKo`pgina brauzerlar html elementini\n html{ \ndisplay:block; \n} \nhtml:focus{ \noutline:none; \n}  \nstandart qiymatlar bilan ko`rsatadi.",
+      "code": "<!DOCTYPE html>\n<html lang=\"uz\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Mening sahifam</title>\n</head>\n<body>\n    <h1>Salom Dunyo!</h1>\n    <p>O‘zbekcha matn, Русский текст, 中文文本, 😊👍</p>\n</body>\n</html>"
+    },
+    {
+      "id": "b34d",
+      "tagName": "head",
+      "description": " head tegi HTML hujjatining bosh qismi bo‘lib, u yerda brauzer va qidiruv tizimlari uchun kerakli  ma’lumotlar yoziladi. Foydalanuvchiga bu qism ko‘rinmaydi, lekin brauzer uni o‘qiydi va asosiy sozlamalarni shunga qarab bajaradi.<head> faqat bir marta bo‘lishi kerak.\nU <html> tegidan keyin, lekin <body> tegi boshlanishidan oldin yoziladi.\n<head> ichida nimalar bo‘ladi?\nQuyidagilar odatda <head> ichida bo‘ladi:\n<title>  Sahifa nomi (brauzer tabida ko‘rinadi)\n<meta>  Sahifa haqida ma’lumot (charset, description, author va h.k.)\n<link>  Tashqi fayllarni ulash (CSS fayllar)\n<style>  Ichki CSS yozish\n<base>  Barcha linklar uchun asosiy URL belgilash\nStandart CSS sozlamalari\nKo'pgina brauzerlar <head> elementni\nhead {\n  display: none;\n}\nstandart qiymatlar bilan ko'rsatadi",
+      "code": "<!DOCTYPE html>\n<html lang=\"uz\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Mening sahifam</title>\n</head>\n<body>\n    <h1>Salom Dunyo!</h1>\n    <p>O‘zbekcha matn, Русский текст, 中文文本, 😊👍</p>\n</body>\n</html>"
     }
   ]
 }

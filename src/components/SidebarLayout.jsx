@@ -1,21 +1,32 @@
+// src/components/Sidebar.jsx
 import React, { useState } from 'react';
 import {
-  Drawer, List, ListItem, ListItemText, AppBar, Toolbar, Typography, IconButton, Box, CssBaseline
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  AppBar,
+  Toolbar,
+  Typography,
+  IconButton,
+  Box
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from 'react-router-dom';
 
-const drawerWidth = 240;
+const drawerWidth = 150;
 
-const SidebarLayout = ({ children }) => {
+export default function Sidebar() {
   const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
+  const handleDrawerToggle = () => {
+    setMobileOpen((prev) => !prev);
+  };
 
   const menuItems = [
-    { text: 'AddTag', path: '/' },
-    { text: 'TagList', path: '/list' },
+    { text: 'AddTag', path: '/addtag' },
+    { text: 'TagList', path: '/list' }
   ];
 
   const drawer = (
@@ -24,11 +35,13 @@ const SidebarLayout = ({ children }) => {
       <List>
         {menuItems.map((item) => (
           <ListItem
+            button
             key={item.text}
             onClick={() => {
               navigate(item.path);
               setMobileOpen(false);
             }}
+            sx={{ cursor: 'pointer' }}
           >
             <ListItemText primary={item.text} />
           </ListItem>
@@ -39,37 +52,26 @@ const SidebarLayout = ({ children }) => {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-
-      {/* AppBar */}
-      <AppBar
-        position="fixed"
-        sx={{
-          width: '100%',
-          ml: 0,
-        }}
-      >
+      {/* AppBar with hamburger for mobile */}
+      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
         <Toolbar>
           <IconButton
             color="inherit"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { lg: 'none' } }} // faqat <1025px
+            sx={{ mr: 2, display: { lg: 'none' }, cursor: 'pointer' }}
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
-            Tag Info App
+          <Typography variant="h6" noWrap component="div">
+            WebTagVault
           </Typography>
         </Toolbar>
       </AppBar>
 
-      {/* Temporary (hamburger) Drawer: doim mavjud, lekin faqat <1025px uchun ochiladi */}
-      <Box
-        component="nav"
-        sx={{ flexShrink: { lg: 0 } }}
-        aria-label="sidebar navigation"
-      >
+      {/* Responsive Drawer */}
+      <Box component="nav">
+        {/* Mobile drawer */}
         <Drawer
           variant="temporary"
           open={mobileOpen}
@@ -77,42 +79,23 @@ const SidebarLayout = ({ children }) => {
           ModalProps={{ keepMounted: true }}
           sx={{
             display: { xs: 'block', lg: 'none' },
-            '& .MuiDrawer-paper': { width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth }
           }}
         >
           {drawer}
         </Drawer>
-
-        {/* Permanent Drawer Faqat >=1025px uchun */}
+        {/* Desktop drawer */}
         <Drawer
           variant="permanent"
           sx={{
-            display: { xs: 'none', lg: 'block' }, // faqat katta ekranda
-            '& .MuiDrawer-paper': { width: drawerWidth, boxSizing: 'border-box' },
+            display: { xs: 'none', lg: 'block' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth }
           }}
           open
         >
           {drawer}
         </Drawer>
       </Box>
-
-      {/* Asosiy kontent */}
-      <Box
-        component="main"
-        sx={{
-          flexGrow: 1,
-          p: 3,
-          width: {
-            xs: '100%',
-            lg: `calc(100% - ${drawerWidth}px)`,
-          },
-        }}
-      >
-        <Toolbar />
-        {children}
-      </Box>
     </Box>
   );
-};
-
-export default SidebarLayout;
+}
